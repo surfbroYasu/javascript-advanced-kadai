@@ -16,6 +16,7 @@ const typedField = document.getElementById('typed');
 const wrap = document.getElementById('wrap');
 const start = document.getElementById('start');
 const count = document.getElementById('count');
+const typeCount = document.getElementById('typecount');
 
 // テキストストックの配列
 const textList = [
@@ -79,6 +80,7 @@ const keyPress = e=> {
   untyped = untyped.substring(1);
   typedField.textContent = typed;
   untypedField.textContent = untyped;
+  typeCount.textContent = score;
 
   if (untyped === ''){
     createText();
@@ -133,6 +135,7 @@ const timer = () => {
   },1000);
 };
 
+
 /* 
 *イベント処理
 */
@@ -144,3 +147,4 @@ start.addEventListener('click',()=>{
 }
 );
 untypedField.textContent = 'スタートボタンで開始';
+typeCount.textContent = '';
